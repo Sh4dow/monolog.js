@@ -1,36 +1,26 @@
 mongolog.js
 ===========
 
-https://github.com/Mparaiso/monolog.js
-
-[![NPM](https://nodei.co/npm/monolog.png)](https://nodei.co/npm/monolog/)
-
-
-[![Build Status](https://travis-ci.org/Mparaiso/monolog.js.png?branch=master)](https://travis-ci.org/Mparaiso/monolog.js)
-
-[![Coverage Status](https://coveralls.io/repos/Mparaiso/monolog.js/badge.png)](https://coveralls.io/r/Mparaiso/monolog.js)
-
-
 ###Log everything everywhere, monolog for javascript and node
 
-author mparaiso <mparaiso@online.fr>
+Monolog.js is heavily inspired by [monolog](https://github.com/Seldaek/monolog) PHP library that was written by mparaiso <mparaiso@online.fr> and now rewritten again
 
-heavily inspired by [monolog](https://github.com/Seldaek/monolog) PHP library
+
 
 ###Installation
 
-	npm install -g monolog
+	npm install -g monolog.js
 
 ####Handlers
 
 - ConsoleLogHandler : log to console
+- StreamHandler : log to a stream
 - CouchDBHandler : log to CouchDB
 - MongoDBHandler : log to MongoDB
-- StreamHandler : log to a stream
 - TestHandler : log to an array
 - NullHandler : null logging
 
-####Processors
+####Processors (work in progress)
 
 - ExpressProcessor : get express request data
 - WebProcessor : get server data
@@ -45,15 +35,30 @@ heavily inspired by [monolog](https://github.com/Seldaek/monolog) PHP library
 ####Basic usage
 
 ```javascript
-	var monolog = require('monolog')
-		, Logger = monolog.Logger
-		, StreamHandler = monolog.handler.StreamHandler;
+	var {Logger, formatter, handler} = require('monolog.js');
 
+	var log = new Logger('name')
+
+	var jsonFormat = new formatter.JSONFormatter();
+	var consoleLog = new handler.ConsoleLogHandler(Logger.DEBUG);
+	// consoleLog.setFormatter(jsonFormat);
+	log.addHandler(consoleLog);
+
+	// add records to the log
+	log.info('InFo');
+	log.warning('Foo');
+	log.error('Bar');
+	log.debug('Baz');
+	
 	//create a Log channel
 	var log = new Logger('name')
 	//create a Log handler
 	log.pushHandler(new StreamHandler('/path/to/your.log',Logger.DEBUG))
 	//listen to log events
+
+	var jsonFormat = new formatter.JSONFormatter();
+	var consoleLog = new handler.ConsoleLogHandler()
+
 	log.on("log",function(error,record,handler){console.log(arguments)});
 	// add records to the log
 	log.warn('Foo')
