@@ -9,7 +9,7 @@ Monolog.js is heavily inspired by [monolog](https://github.com/Seldaek/monolog) 
 
 ### Installation
  
-	npm install -g monolog.js
+	npm install -g @sh4dow/monolog
 
 #### Handlers
 
@@ -35,7 +35,7 @@ Monolog.js is heavily inspired by [monolog](https://github.com/Seldaek/monolog) 
 ####Basic usage
 
 ```javascript
-	var {Logger, formatter, handler} = require('monolog.js');
+	var {Logger, formatter, handler} = require('@sh4dow/monolog');
 
 	// create log channel
 	var log = new Logger('name')
@@ -64,7 +64,7 @@ Monolog.js is heavily inspired by [monolog](https://github.com/Seldaek/monolog) 
 
 ```javascript
 	
-	const {Logger, handler} = require('monolog');
+	const {Logger, handler} = require('@sh4dow/monolog');
 	logger = new Logger("couchdb logger");
 	logger.pushHandler(new handler.CouchDBHandler({
 		host:"localhost",
@@ -78,7 +78,7 @@ Monolog.js is heavily inspired by [monolog](https://github.com/Seldaek/monolog) 
 
 ```javascript
 	
-	const {Logger, handler} = require('monolog');
+	const {Logger, handler} = require('@sh4dow/monolog');
 	const mongodb = require('mongodb').MongoClient.connect("localhost",function(err,db){
 		logger = new Logger("channel name");
 		logger.pushHandler(new handler.MongoDBHandler(db,"log_collection"));

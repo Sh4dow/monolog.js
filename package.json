@@ -1,5 +1,5 @@
 {
-  "name": "monolog.js",
+  "name": "@sh4dow/monolog",
   "version": "0.1.0",
   "description": "Log with Monolog.js",
   "repository":"https://github.com/Sh4dow/monolog.js",
