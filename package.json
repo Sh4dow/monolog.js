@@ -1,33 +1,18 @@
 {
-  "name": "monolog",
-  "version": "0.0.4",
-  "description": "Log with Monolog",
-  "repository":"https://github.com/Mparaiso/monolog.js",
+  "name": "monolog.js",
+  "version": "0.1.0",
+  "description": "Log with Monolog.js",
+  "repository":"https://github.com/Sh4dow/monolog.js",
   "main": "index.js",
   "scripts": {
     "test": "make test"
   },
-  "dependencies":{
-    "underscore":"*"
-  },
-  "devDependencies":{
-    "chai":"*",
-    "mocha":"*",
-    "codo":"*",
-    "mongodb":"*",
-    "coffee-script":"~1.6",
-    "source-map-support":"*",
-    "sinon":"~1.7",
-    "istanbul":"*",
-    "coveralls":"*"
-  },
   "keywords": [
     "log",
     "logger",
-    "mpm",
     "monolog"
   ],
-  "author": "mparaiso",
-  "email":"mparaiso@online.fr",
+  "author": "Tomasz Budzynski",
+  "email":"tomek.budzynski@gmail.com",
   "license": "LGPL"
 }
