@@ -1,15 +1,14 @@
-mongolog.js
+Mongolog for node
 ===========
 
 ### Log everything everywhere, monolog for javascript and node
 
-Monolog.js is heavily inspired by [monolog](https://github.com/Seldaek/monolog) PHP library that was written by mparaiso <mparaiso@online.fr> and now rewritten again.
-
+Monolog for node is heavily inspired by [monolog](https://github.com/Seldaek/monolog) PHP library that was written by mparaiso <mparaiso@online.fr> and now rewritten again.
 
 
 ### Installation
  
-	npm install -g @sh4dow/monolog
+	npm install @sh4dow/monolog
 
 #### Handlers
 
